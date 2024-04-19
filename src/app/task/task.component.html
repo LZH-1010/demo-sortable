@@ -1,0 +1,22 @@
+<div class="flex">
+  <div #planning>
+    <h2>Planning</h2>
+    @for(t of planningTasks; track t.id) {
+    <div>{{ t.title }}</div>
+    }
+  </div>
+
+  <div #pending>
+    <h2>Pending</h2>
+    @for(t of pendingTasks; track t.id) {
+    <div>{{ t.title }}</div>
+    }
+  </div>
+
+  <div #writing>
+    <h2>Writing</h2>
+    @for(t of writingTasks; track t.id) {
+    <div>{{ t.title }}</div>
+    }
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div cdkDropListGroup class="flex">
+  <div class="example-container">
+    <h2>Planning</h2>
+
+    <div
+      cdkDropList
+      #todoList="cdkDropList"
+      [cdkDropListData]="planningTasks"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      @for (item of planningTasks; track item) {
+      <div class="example-box" cdkDrag>{{ item.title }}</div>
+      }
+    </div>
+  </div>
+
+  <div class="example-container">
+    <h2>Pending</h2>
+
+    <div
+      cdkDropList
+      #doneList="cdkDropList"
+      [cdkDropListData]="pendingTasks"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      @for (item of pendingTasks; track item) {
+      <div class="example-box" cdkDrag>{{ item.title }}</div>
+      }
+    </div>
+  </div>
+</div>
